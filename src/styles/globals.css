@@ -1,0 +1,9 @@
+body {
+    padding: 0;
+    margin: 0;
+    --primary: #20e36b;
+    --secondary: #f9e92f;
+    --complementary: #4876fa;
+    --alert: #be3e82;
+    --white: #fff;
+  }
