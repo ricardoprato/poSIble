@@ -1,10 +1,9 @@
 import React from 'react';
-import { StyledHeader } from './styles';
 
 export const Header = () => {
   return (
-    <StyledHeader>
-    <div className="max-w-screen-xl px-4 py-8 mx-auto sm:py-12 sm:px-6 lg:px-8">
+    <header className='bg-primary'>
+    <div className="max-w-screen-xl px-4 py-8 mx-auto sm:py-8 sm:px-6 lg:px-8">
         <div className="sm:justify-between sm:items-center sm:flex">
         <div className="text-center sm:text-left">
             <h1 className="text-2xl font-bold sm:text-3xl">
@@ -13,11 +12,19 @@ export const Header = () => {
         </div>
 
         <div className="flex flex-col gap-4 mt-4 sm:flex-row sm:mt-0 sm:items-center">
-            <button
-            className="inline-flex items-center justify-center px-5 py-3 text-gray-500 transition border border-gray-200 rounded-lg hover:text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring"
-            type="button"
+
+            <a
+            className="inline-flex items-center justify-center px-5 py-3 text-xl font-medium text-black transition bg-trasnparent border-b-2 border-transparent hover:text-complementary hover:border-b-2 hover:border-complementary focus:outline-none focus:ring" href='#'
             >
-            <span className="text-sm font-medium"> View Website </span>
+            Proyecto
+            </a>
+            <a
+            className="inline-flex items-center justify-center px-5 py-3 text-xl font-medium text-black transition bg-trasnparent border-b-2 border-transparent hover:text-complementary hover:border-b-2 hover:border-complementary focus:outline-none focus:ring" href='#'
+            >
+            Estudiantes
+            </a>
+            <a class="inline-flex items-center justify-center px-6 py-3 text-xl font-medium text-white bg-complementary border-2 border-complementary rounded-lg hover:bg-primary hover:text-black hover:border-black active:bg-complementary focus:outline-none focus:ring" href="/download">
+            <span className="text-sm font-medium"> Ingresar </span>
 
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,18 +40,11 @@ export const Header = () => {
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                 />
             </svg>
-            </button>
-
-            <button
-            className="block px-5 py-3 text-sm font-medium text-white transition bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring"
-            type="button"
-            >
-            Create Post
-            </button>
+            </a>
         </div>
         </div>
     </div>
-    </StyledHeader>
+    </header>
 
 
   )

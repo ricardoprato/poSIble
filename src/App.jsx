@@ -1,5 +1,5 @@
-import { Header } from './Components/Header'
-import { Banner } from './Components/Banner'
+import { Header } from './containers/Header'
+import { Banner } from './components/Banner'
 
 function App() {
 
