@@ -1,6 +1,6 @@
 import estudiante from '../../assets/estudiante4.jpg'
 
-const Footer = () => {
+export const Footer = () => {
     return (
         <footer class="text-white bg-black lg:grid lg:grid-cols-5">
             <aside class="hidden lg:relative lg:col-span-2 lg:block">
@@ -124,5 +124,3 @@ const Footer = () => {
 
     );
 }
-
-export default Footer;
