@@ -1,4 +1,4 @@
-import React from 'react';
+import { NavLink } from 'react-router-dom'
 
 export const Header = () => {
   return (
@@ -18,11 +18,11 @@ export const Header = () => {
             >
             Proyecto
             </a>
-            <a
+            <NavLink to='/estudiantes'
             className="inline-flex items-center justify-center px-5 py-3 text-xl font-medium text-white transition bg-trasnparent border-b-2 border-transparent hover:text-primary hover:border-b-2 hover:border-primary focus:outline-none focus:ring" href='#'
             >
             Estudiantes
-            </a>
+            </NavLink>
             <a class="inline-flex items-center justify-center px-6 py-3 text-xl font-medium text-white bg-complementary border-2 border-white rounded-lg hover:bg-primary hover:text-black hover:border-black active:bg-primary focus:outline-none focus:ring" href="/download">
             <span className="text-sm font-medium"> Ingresar </span>
 
