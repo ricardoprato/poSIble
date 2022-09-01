@@ -11,7 +11,7 @@ export const Platforms = () => {
         <section class="text-white bg-darkBlue">
             <div class="px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8">
                 <div class="max-w-lg mx-auto text-center">
-                    <h2 class="text-3xl text-lightBlue font-bold sm:text-4xl">Plataformas</h2>
+                    <h2 class="text-3xl text-secondary font-bold sm:text-4xl">Plataformas</h2>
 
                     <p class="mt-4">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur
@@ -29,8 +29,7 @@ export const Platforms = () => {
                     <PlatformCard name='CodigoFacilito' image={CodigoFacilitoImg} />
                 </div><div class="mt-12 text-center">
                     <a
-                        class="inline-flex items-center px-8 py-3 mt-8 text-black bg-lightBlue border border-black rounded hover:bg-transparent hover:border-white hover:text-white active:text-lightBlue focus:outline-none focus:ring"
-                        href="/get-started"
+                        class="inline-flex items-center px-8 py-3 mt-8 text-black bg-secondary border-2 border-black rounded hover:bg-transparent hover:border-white hover:text-white active:text-secondary focus:outline-none focus:ring"
                     >
                         <span class="text-sm font-medium">Aplicar</span>
 

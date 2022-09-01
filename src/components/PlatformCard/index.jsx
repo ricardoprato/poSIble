@@ -6,7 +6,7 @@ export const PlatformCard = ({ name, image }) => {
         >
             <div className="flex justify-center">
                 <div className="relative">
-                    <img alt="..." src={image} className="bg-cover h-48 w-48 align-middle border-none" />
+                    <img alt="..." src={image} className="bg-cover h-32 w-32 align-middle border-none" />
                 </div>
 
             </div>

@@ -22,7 +22,7 @@ export const Donate = () => {
                     </p>
 
                     <div class="flex flex-wrap mt-8 text-center gap-4">
-                        <a class="block w-full px-12 py-3 text-sm font-medium text-black rounded shadow bg-yellow border border-black sm:w-auto active:bg-rose-500 hover:bg-rose-700 focus:outline-none focus:ring" href="/get-started">
+                        <a class="block w-full px-12 py-3 text-sm font-medium text-black rounded shadow bg-complementary border-2 border-black sm:w-auto active:bg-rose-500 hover:bg-primary focus:outline-none focus:ring">
                             Donar
                         </a>
                     </div>
