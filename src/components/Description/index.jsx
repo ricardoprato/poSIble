@@ -1,4 +1,5 @@
 import estudiante from '../../assets/estudiante.jpg'
+import { NavLink } from 'react-router-dom'
 
 export const Description = () => {
     return (
@@ -18,33 +19,17 @@ export const Description = () => {
                     <div class="lg:py-24">
                         <h2 class="text-3xl font-bold sm:text-4xl">Obten la oportunidad para educarte</h2>
 
-                        <p class="mt-4 text-gray-600">
+                        <p class="mt-4 mb-4 text-gray-600">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic
                             atque tenetur quis eius quos ea neque sunt, accusantium soluta minus
                             veniam tempora deserunt? Molestiae eius quidem quam repellat.
                         </p>
 
-                        <a
-                            class="inline-flex items-center px-8 py-3 mt-8 text-white bg-indigo-600 border border-indigo-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
-                            href="/get-started"
-                        >
-                            <span class="text-sm font-medium"> Get Started </span>
-
-                            <svg
-                                class="w-5 h-5 ml-3"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                />
-                            </svg>
-                        </a>
+                        <NavLink to='/'>
+                            <a class="inline-block px-12 py-3 text-sm font-medium text-black rounded shadow bg-complementary border-2 border-black sm:w-auto hover:bg-primary focus:outline-none focus:ring">
+                                Registrarte
+                            </a>
+                        </NavLink>
                     </div>
                 </div>
             </div>
