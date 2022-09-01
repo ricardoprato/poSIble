@@ -13,11 +13,11 @@ export const Header = () => {
 
         <div className="flex flex-col gap-4 mt-4 sm:flex-row sm:mt-0 sm:items-center">
 
-            <a
+            <NavLink to='/'
             className="inline-flex items-center justify-center px-5 py-3 text-xl font-medium text-white transition bg-trasnparent border-b-2 border-transparent hover:text-primary hover:border-b-2 hover:border-primary focus:outline-none focus:ring" href='#'
             >
             Proyecto
-            </a>
+            </NavLink>
             <NavLink to='/estudiantes'
             className="inline-flex items-center justify-center px-5 py-3 text-xl font-medium text-white transition bg-trasnparent border-b-2 border-transparent hover:text-primary hover:border-b-2 hover:border-primary focus:outline-none focus:ring" href='#'
             >
