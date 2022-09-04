@@ -25,7 +25,7 @@ export const Description = () => {
                             veniam tempora deserunt? Molestiae eius quidem quam repellat.
                         </p>
 
-                        <NavLink to='/'>
+                        <NavLink to='/form'>
                             <a class="inline-block px-12 py-3 text-sm font-medium text-black rounded shadow bg-complementary border-2 border-black sm:w-auto hover:bg-primary focus:outline-none focus:ring">
                                 Registrarte
                             </a>

@@ -21,7 +21,7 @@ export const Hero = () => {
           </p>
 
           <div class="flex flex-wrap gap-4 mt-8 text-center">
-            <NavLink to='/'>
+            <NavLink to='/form'>
               <a class="block w-full px-12 py-3 text-sm font-medium text-black rounded shadow bg-complementary border-2 border-black sm:w-auto active:bg-rose-500 hover:bg-primary focus:outline-none focus:ring">
                 Registrarte
               </a>

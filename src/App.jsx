@@ -4,7 +4,7 @@ import { Home } from './pages/Home'
 import { Footer } from './components/Footer'
 import { Student } from './pages/Student'
 
-import { Form } from './components/Form'
+import { Form } from './pages/Form'
 
 function App() {
 
