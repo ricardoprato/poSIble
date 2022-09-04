@@ -1,51 +1,52 @@
 import background from '../../assets/biblioteca.jpg'
 import student from '../../assets/estudiante-cuadrado.jpg'
 
-const StudentComponent = () => {
+const StudentComponent = ({estado='Patrocinado'}) => {
     return (
         <div className='relative'>
-            <section class="relative bg-white">
+            <section class="relative h-auto pt-24 pb-24 bg-white">
+                <div class="absolute top-0 w-full h-full bg-center bg-cover" >
                 <img
-                    class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
+                    class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full"
                     src={background}
                     alt="Couple on a bed with a dog"
                 />
-
-                <div class="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-white sm:to-transparent"></div>
+                    {/* <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span> */}
+                </div>
 
                 <div class="relative px-4 py-32 mx-auto max-w-screen-xl lg:h-auto lg:items-center lg:flex">
                 </div>
             </section>
 
-            <section className="relative block py-16 bg-blue">
+            <section className="relative block py-16 bg-complementary">
                 <div className="container mx-auto px-4">
-                    <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 -mt-64 shadow-xl rounded-lg">
+                    <div className="relative flex flex-col min-w-0 break-words border-4 border-black bg-white w-full -mt-32 shadow-xl rounded-lg">
                         <div className="px-6">
                             <div className="flex flex-wrap justify-center">
                                 <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                                     <div className="relative">
-                                        <img alt="..." src={student} className="shadow-xl bg-cover rounded-full h-64 w-64 align-middle border-none max-w-150-px" />
+                                        <img alt="..." src={student} className="shadow-xl bg-cover rounded-full h-64 w-64 align-middle border-4 border-black -mt-32 max-w-150-px" />
                                     </div>
                                 </div>
                                 <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
                                     <div className="py-6 px-3 mt-32 sm:mt-0">
                                         <button className="bg-alert active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150" type="button">
-                                            Donar
+                                            {estado}
                                         </button>
                                     </div>
                                 </div>
                                 <div className="w-full lg:w-4/12 px-4 lg:order-1">
-                                    {/* <div className="flex justify-center py-4 lg:pt-4 pt-8">
+                                    <div className="flex justify-center py-4 lg:pt-4 pt-8">
                                         <div className="mr-4 p-3 text-center">
-                                            <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">22</span><span className="text-sm text-blueGray-400">Friends</span>
+                                            <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">5</span><span className="text-sm text-blueGray-400">Donadores</span>
                                         </div>
                                         <div className="mr-4 p-3 text-center">
-                                            <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">10</span><span className="text-sm text-blueGray-400">Photos</span>
+                                            <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">10</span><span className="text-sm text-blueGray-400">Cursos</span>
                                         </div>
                                         <div className="lg:mr-4 p-3 text-center">
-                                            <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">89</span><span className="text-sm text-blueGray-400">Comments</span>
+                                            <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">89</span><span className="text-sm text-blueGray-400">Estrellas</span>
                                         </div>
-                                    </div> */}
+                                    </div>
                                 </div>
                             </div>
                             <div className="text-center mt-12">
