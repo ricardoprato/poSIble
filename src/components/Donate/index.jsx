@@ -1,4 +1,5 @@
 import background from '../../assets/student-3.jpg'
+import { NavLink } from 'react-router-dom';
 
 export const Donate = () => {
     return (
@@ -22,9 +23,11 @@ export const Donate = () => {
                     </p>
 
                     <div class="flex flex-wrap mt-8 text-center gap-4">
-                        <a class="block w-full px-12 py-3 text-sm font-medium text-black rounded shadow bg-complementary border-2 border-black sm:w-auto active:bg-rose-500 hover:bg-primary focus:outline-none focus:ring">
-                            Donar
-                        </a>
+                        <NavLink to='/estudiantes'>
+                            <a class="block w-full px-12 py-3 text-sm font-medium text-black rounded shadow bg-complementary border-2 border-black sm:w-auto active:bg-rose-500 hover:bg-primary focus:outline-none focus:ring">
+                                Donar
+                            </a>
+                        </NavLink>
                     </div>
                 </div>
             </div>

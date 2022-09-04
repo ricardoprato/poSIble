@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Form = () => {
+export const FormComponent = () => {
   return (
     <div class="px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8">
       <div class="max-w-lg mx-auto">
