@@ -4,6 +4,8 @@ import { Home } from './pages/Home'
 import { Footer } from './components/Footer'
 import { Student } from './pages/Student'
 
+import { Form } from './components/Form'
+
 function App() {
 
   return (
@@ -13,6 +15,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/estudiantes' element={<Student />} />
+          <Route exact path='/form' element={<Form />} />
         </Routes>
         <Footer />
       </BrowserRouter>
