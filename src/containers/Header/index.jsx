@@ -6,9 +6,11 @@ export const Header = () => {
     <div className="max-w-screen-xl px-4 py-8 mx-auto sm:py-8 sm:px-6 lg:px-8">
         <div className="sm:justify-between sm:items-center sm:flex">
         <div className="text-center sm:text-left">
-            <h1 className="text-2xl text-white font-bold sm:text-4xl">
-            poSíble!
-            </h1>
+            <NavLink to='/'>
+                <h1 className="text-2xl text-primary hover:text-yellow font-bold sm:text-4xl">
+                poSíble!
+                </h1>
+            </NavLink>
         </div>
 
         <div className="flex flex-col gap-4 mt-4 sm:flex-row sm:mt-0 sm:items-center">

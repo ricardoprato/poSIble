@@ -1,7 +1,7 @@
-export const PlatformCard = ({ name, image }) => {
+export const PlatformCard = ({ name, image, description }) => {
     return (
         <a
-            class="block p-8 border border-black shadow-xl transition rounded-xl hover:shadow-lightBlue/10 hover:border-lightBlue/10"
+            class="block p-8 border border-black shadow-xl transition rounded-xl hover:shadow-yellow/20 hover:border-yellow/20"
             href="/services/digital-campaigns"
         >
             <div className="flex justify-center">
@@ -12,11 +12,10 @@ export const PlatformCard = ({ name, image }) => {
             </div>
 
 
-            <h3 class="mt-4 text-xl font-bold text-white">{name}</h3>
+            <h3 class="mt-4 text-xl font-bold text-yellow">{name}</h3>
 
-            <p class="mt-1 text-sm text-gray-300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo
-                possimus adipisci distinctio alias voluptatum blanditiis laudantium.
+            <p class="mt-1 text-sm text-white">
+                {description}
             </p>
         </a>
     );
