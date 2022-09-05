@@ -13,7 +13,7 @@ export const Header = () => {
 
         <div className="flex flex-col gap-4 mt-4 sm:flex-row sm:mt-0 sm:items-center">
 
-            <NavLink to='/'
+            <NavLink to='/faq'
             className="inline-flex items-center justify-center px-5 py-3 text-xl font-medium text-white transition bg-trasnparent border-b-2 border-transparent hover:text-secondary hover:border-b-2 hover:border-secondary focus:outline-none focus:ring"
             >
             Proyecto
