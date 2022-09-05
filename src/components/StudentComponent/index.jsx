@@ -4,17 +4,17 @@ import student from '../../assets/estudiante-cuadrado.jpg'
 const StudentComponent = ({estado='Patrocinado'}) => {
     return (
         <div className='relative'>
-            <section class="relative h-auto pt-24 pb-24 bg-white">
-                <div class="absolute top-0 w-full h-full bg-center bg-cover" >
+            <section className="relative h-auto pt-24 pb-24 bg-white">
+                <div className="absolute top-0 w-full h-full bg-center bg-cover" >
                 <img
-                    class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full"
+                    className="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full"
                     src={background}
                     alt="Couple on a bed with a dog"
                 />
-                    {/* <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span> */}
+                    {/* <span id="blackOverlay" className="w-full h-full absolute opacity-50 bg-black"></span> */}
                 </div>
 
-                <div class="relative px-4 py-32 mx-auto max-w-screen-xl lg:h-auto lg:items-center lg:flex">
+                <div className="relative px-4 py-32 mx-auto max-w-screen-xl lg:h-auto lg:items-center lg:flex">
                 </div>
             </section>
 
