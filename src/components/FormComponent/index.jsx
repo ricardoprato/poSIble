@@ -14,12 +14,12 @@ export const FormComponent = () => {
           
         <form action="" class="space-y-4">
           <div>
-            <label class="sr-only" for="name">Name</label>
+            <label htmlFor="name">Nombre del Proyecto</label>
             <input class="w-full p-3 text-sm border-gray-200 rounded-lg" placeholder="Nombre del proyecto" type="text" id="name" />
           </div>
 
           <div>
-            <label class="sr-only" for="message">Descripcion del proyecto</label>
+            <label htmlFor="message">Descripcion del proyecto</label>
             <textarea
               class="w-full p-3 text-sm border-gray-200 rounded-lg"
               placeholder="Descripcion"
@@ -29,14 +29,17 @@ export const FormComponent = () => {
           </div>
 
           <div>
+            <label htmlFor="name">Cantidad Requerida</label>
             <input type="number" name="Cantidad" id="" aria-label='' placeholder='Cantidad Requerida' class='w-full p-3 border-gray-200 rounded-lg'/>
           </div>
 
           <div>
+            <label htmlFor="name">Cantidad Minima</label>
             <input type="number" name="Cantidad" id="" aria-label='' placeholder='Cantidad Mininima para donar' class='w-full p-3 border-gray-200 rounded-lg'/>
           </div>
 
           <div>
+            <label htmlFor="name">Fecha Limite</label>
             <input type="date" name="" id="" aria-label='' class='w-full p-3 border-gray-200 rounded-lg'/>
           </div>
 
