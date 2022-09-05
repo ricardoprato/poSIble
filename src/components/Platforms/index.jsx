@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { PlatformCard } from "../PlatformCard";
 import PlatziImg from '../../assets/platzi.png'
-import EDTeamImg from '../../assets/EDTeam-isotipo.png'
+import EDTeamImg from '../../assets/EDteam-isotipo.png'
 import CoderHouseImg from '../../assets/coderhouse_logo.png'
 import BlockdemyImg from '../../assets/blockdemy.jpg'
 import CrehanaImg from '../../assets/crehana.png'
