@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import estudiante from '../../assets/estudiante4.jpg'
 
 export const Footer = () => {
@@ -18,18 +19,16 @@ export const Footer = () => {
                             <span class="text-xs tracking-widest uppercase">
                                 Somos
                             </span>
-
-                            <a class="block text-2xl sm:text-3xl hover:opacity-75" href="">
-                                poSíble
-                            </a>
+                            <NavLink to='/'>
+                                <a class="block text-2xl sm:text-3xl text-primary hover:text-yellow">
+                                    poSíble
+                                </a>
+                            </NavLink>
                         </p>
 
-                        <ul class="mt-8 space-y-2 text-sm">
-                            <li>Monday to Friday: 10am - 5pm</li>
-                            <li>Weekend: 10am - 3pm</li>
-                        </ul>
+                        <p className='mt-4'>El lugar la educación es poSíble.</p>
 
-                        <div class="flex mt-16 space-x-3">
+                        {/* <div class="flex mt-16 space-x-3">
                             <a class="p-2 border rounded-full border-white/25 hover:opacity-75" href="" target="_blank" rel="noreferrer">
                                 <span class="sr-only"> Facebook </span>
 
@@ -69,31 +68,33 @@ export const Footer = () => {
                                     <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd" />
                                 </svg>
                             </a>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                         <div>
                             <p class="font-medium">
-                                Support
+                                Sobre poSíble
                             </p>
 
                             <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
-                                <a class="hover:opacity-75" href=""> Contact </a>
-                                <a class="hover:opacity-75" href=""> FAQs </a>
-                                <a class="hover:opacity-75" href=""> Live Chat </a>
-                                <a class="hover:opacity-75" href=""> Forums </a>
+                                <a class="hover:opacity-75" href=""> Proyecto </a>
+                                <a class="hover:opacity-75" href=""> Cómo participar </a>
+                                <a class="hover:opacity-75" href=""> Cómo donar </a>
+                                <a class="hover:opacity-75" href=""> Roadmap </a>
                             </nav>
                         </div>
 
                         <div>
-                            <p class="font-medium">Products</p>
+                            <p class="font-medium">Proyecto creado por:</p>
 
                             <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
-                                <a class="hover:opacity-75" href=""> 1to1 Coaching </a>
-                                <a class="hover:opacity-75" href=""> Lesson Plans </a>
-                                <a class="hover:opacity-75" href=""> Meal Plans </a>
-                                <a class="hover:opacity-75" href=""> Gym Sessions </a>
+                                <a class="hover:opacity-75" href=""> Alberto </a>
+                                <a class="hover:opacity-75" href=""> Belen </a>
+                                <a class="hover:opacity-75" href=""> Joel </a>
+                                <a class="hover:opacity-75" href=""> Juan </a>
+                                <a class="hover:opacity-75" href=""> Miguel </a>
+                                <a class="hover:opacity-75" href=""> Ricardo </a>
                             </nav>
                         </div>
                     </div>
@@ -102,21 +103,16 @@ export const Footer = () => {
                 <div class="pt-12 mt-12 border-t border-gray-800">
                     <div class="text-sm text-gray-300 sm:items-center sm:justify-between sm:flex">
                         <div class="flex space-x-3">
-                            <a class="hover:opacity-75" href=""> Privacy Policy </a>
-                            <a class="hover:opacity-75" href=""> Terms & Conditions </a>
-                            <a class="hover:opacity-75" href=""> Returns Policy </a>
+                            <a class="hover:opacity-75" href="">Términos y condiciones</a>
                         </div>
 
                         <p class="mt-4 sm:mt-0">
-                            &copy; 2022 Company Name.
+                            &copy; 2022 poSíble.
                         </p>
                     </div>
 
-                    <p class="mt-8 text-xs text-gray-500">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus mollitia quia quod repellendus. Porro harum,
-                        odio dolore perspiciatis praesentium provident esse consequatur quibusdam aperiam, cupiditate omnis modi in
-                        quasi? In, maxime odio vel repellat sed earum? Debitis quaerat facilis animi. Odio natus nostrum laboriosam
-                        impedit magnam praesentium asperiores consectetur ipsum.
+                    <p class="mt-8 text-sm text-gray-500">
+                        De Latinoamérica con amor para el mundo 💙🌎
                     </p>
                 </div>
             </div>
