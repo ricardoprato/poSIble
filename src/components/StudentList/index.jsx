@@ -8,14 +8,11 @@ export const StudentList = ({
   return (
     <article className="p-6 bg-blue sm:p-8 rounded-xl ring ring-indigo-50">
       <div className="flex items-start">
-        <div
-          className="hidden overflow-hidden sm:grid sm:h-20 sm:w-20 sm:shrink-0 sm:place-content-center sm:rounded-full sm:border-2 sm:border-lightBlue"
-          aria-hidden="true"
-        >
+        <div className=" overflow-hidden grid h-20 w-20 shrink-0 place-content-center rounded-full border-2 border-lightBlue">
           <img src={avatar} />
         </div>
 
-        <div className="sm:ml-8">
+        <div className="ml-8">
           <strong className="rounded border border-indigo-500 bg-indigo-500 px-3 py-1.5 text-[10px] font-medium text-white">
             {fullName}
           </strong>
