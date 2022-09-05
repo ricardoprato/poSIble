@@ -13,7 +13,7 @@ export const Hero = () => {
             El lugar donde la educación es
             <br />
             <strong className="font-extrabold text-secondary sm:block">
-              poSíble
+              poSíble💻
             </strong>
           </h2>
 
@@ -23,12 +23,12 @@ export const Hero = () => {
 
           <div class="inline-flex items-center justify-center flex-wrap gap-4 mt-8 mb-8 text-center">
             <NavLink to='/form'>
-              <a class="block w-full px-12 py-3 text-md font-medium text-black rounded shadow bg-primary border-2 border-black sm:w-auto active:bg-rose-500 hover:bg-primary focus:outline-none focus:ring">
+              <a class="block w-full px-12 py-3 text-md font-medium text-black rounded shadow bg-primary border-2 border-black sm:w-auto active:bg-rose-500 hover:bg-red focus:outline-none focus:ring">
                 Registrarte
               </a>
             </NavLink>
             <NavLink to='/estudiantes'>
-              <a class="block w-full px-12 py-3 text-md font-medium text-black rounded shadow bg-secondary border-2 border-black sm:w-auto active:bg-rose-500 hover:bg-primary focus:outline-none focus:ring">
+              <a class="block w-full px-12 py-3 text-md font-medium text-black rounded shadow bg-secondary border-2 border-black sm:w-auto active:bg-rose-500 hover:bg-red focus:outline-none focus:ring">
                 Proyecto
               </a>
             </NavLink>

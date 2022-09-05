@@ -18,7 +18,8 @@ module.exports = {
       lightYellow: '#FBF07B',
       red: '#E3544D',
       alert: '#be3e82',
-      white: '#edebe8',
+      white: '#ffff',
+      lightGray: '#edebe8',
       black: '#000',
       lightDark: '#131516',
       gray: '#26231c'
