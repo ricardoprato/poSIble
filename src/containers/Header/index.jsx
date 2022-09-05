@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 export const Header = () => {
   return (
-    <header className='bg-complementary'>
+    <header className='bg-darkBlue'>
     <div className="max-w-screen-xl px-4 py-8 mx-auto sm:py-8 sm:px-6 lg:px-8">
         <div className="sm:justify-between sm:items-center sm:flex">
         <div className="text-center sm:text-left">
@@ -23,8 +23,8 @@ export const Header = () => {
             >
             Estudiantes
             </NavLink>
-            <NavLink to='/form'>
-                <a class="inline-flex items-center justify-center px-6 py-3 text-xl font-medium text-white bg-complementary border-2 border-white rounded-lg hover:bg-secondary hover:text-black hover:border-black active:bg-primary focus:outline-none focus:ring" href="/download">
+            <NavLink to='/form' className="inline-flex items-center justify-center">
+                <a className="inline-flex items-center ju px-6 py-3 text-xl font-medium text-white bg-darkBlue border-2 border-white rounded-lg hover:bg-secondary hover:text-black hover:border-black active:bg-primary focus:outline-none focus:ring">
                 <span className="text-sm font-medium"> Ingresar </span>
 
                 <svg
