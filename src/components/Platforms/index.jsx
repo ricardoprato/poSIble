@@ -20,7 +20,7 @@ export const Platforms = () => {
           </p>
         </div>
 
-         <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+         <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                     <PlatformCard name='Platzi' image={PlatziImg} description='Crece profesionalmente con más de 1000 cursos en línea con los contenidos más innovadores. Encuentra en Platzi más de 1000 cursos en líneas para mejorar tus habilidades laborales.'/>
                     <PlatformCard name='CoderHouse' image={CoderHouseImg} description='Toma clases a distancia, con profesores expertos y con una metodología 100% práctica. Los Mejores Cursos de Marketing Digital, Programación y Diseño.'/>
                     <PlatformCard name='EDTeam' image={EDTeamImg} description='Aprende programación, diseño y emprendimiento en español con profesores que aman enseñar. Invierte en tu conocimiento. Tu futuro te está esperando.'/>
@@ -40,9 +40,9 @@ export const Platforms = () => {
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
