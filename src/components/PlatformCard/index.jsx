@@ -1,7 +1,7 @@
 export const PlatformCard = ({ name, image, description }) => {
     return (
         <a
-            class="block p-8 border border-black shadow-xl transition rounded-xl hover:shadow-yellow/20 hover:border-yellow/20"
+            className="block p-8 border border-black shadow-xl transition rounded-xl hover:shadow-yellow/20 hover:border-yellow/20"
             href="/services/digital-campaigns"
         >
             <div className="flex justify-center">
@@ -12,9 +12,9 @@ export const PlatformCard = ({ name, image, description }) => {
             </div>
 
 
-            <h3 class="mt-4 text-xl font-bold text-yellow">{name}</h3>
+            <h3 className="mt-4 text-xl font-bold text-yellow">{name}</h3>
 
-            <p class="mt-1 text-sm text-white">
+            <p className="mt-1 text-sm text-white">
                 {description}
             </p>
         </a>
