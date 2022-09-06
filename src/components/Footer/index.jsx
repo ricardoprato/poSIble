@@ -76,10 +76,10 @@ export const Footer = () => {
                             </p>
 
                             <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
-                                <NavLink className="hover:opacity-75" href="/faq"> Proyecto </NavLink>
-                                <NavLink className="hover:opacity-75" href="/faq"> Cómo participar </NavLink>
-                                <NavLink className="hover:opacity-75" href="/faq"> Cómo donar </NavLink>
-                                <NavLink className="hover:opacity-75" href="/faq"> Roadmap </NavLink>
+                                <NavLink className="hover:opacity-75" to="/faq"> Proyecto </NavLink>
+                                <NavLink className="hover:opacity-75" to="/faq"> Cómo participar </NavLink>
+                                <NavLink className="hover:opacity-75" to="/faq"> Cómo donar </NavLink>
+                                <NavLink className="hover:opacity-75" to="/faq"> Roadmap </NavLink>
                             </nav>
                         </div>
 
