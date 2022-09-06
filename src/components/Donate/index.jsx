@@ -15,7 +15,8 @@ export const Donate = () => {
             <div className="relative px-4 py-32 mx-auto max-w-screen-xl lg:h-screen lg:items-center lg:flex">
                 <div className="max-w-xl text-center sm:text-left">
                     <h1 className="text-3xl text-darkBlue font-extrabold sm:text-5xl">
-                        ¡Dona! Y dile Sí a transformar las vidas que construiran el futuro🤩
+                        ¡Dona! Y dile Sí a transformar las vidas que construirán el futuro🤩
+
                     </h1>
 
                     <p className="max-w-lg mt-4 sm:leading-relaxed text-black sm:text-xl">

@@ -1,6 +1,23 @@
 import ejemplo from '../../assets/ejemplo3.png'
 import { NavLink } from 'react-router-dom'
 
+import { ethers } from "ethers"; // interacting with wallet
+import abi from "../../data/Crowfuning.json";
+
+const main = async (e) => {
+
+let CrowfundingContract2 = new ethers.Contract(
+  "0x8e008d047744e9a4dd3850c10058ebef07b6c99d",
+  abi
+);
+
+const test = await CrowfundingContract2.Students()
+  console.log(test)
+  console.log(CrowfundingContract2)
+}
+main()
+
+
 export const Hero = () => {
   return (
     <section className="relative bg-complementary">
