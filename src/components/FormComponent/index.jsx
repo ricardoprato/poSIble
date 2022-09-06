@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { validator } from "./utils.js";
 import { useCountries } from "../../customHooks/useCountries/";
 import { useState } from "react"; // storing data in the state
