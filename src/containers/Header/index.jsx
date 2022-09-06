@@ -4,9 +4,7 @@ import { useState, useMemo } from "react"; // storing data in the state
 import { ethers } from "ethers"; // interacting with wallet
 import { useEffect } from "react";
 
-
 export const Header = () => {
-
   const [publicKey, setPublickey] = useState();
   const [network, setNetwork] = useState();
   const [chainId, setChainId] = useState();
@@ -25,6 +23,7 @@ export const Header = () => {
       setNetwork(name);
       setChainId(chainId);
       setPublickey(accounts[0]);
+
     } else {
       setMsg("Install MetaMask");
     }
@@ -47,7 +46,6 @@ export const Header = () => {
       setMsg(error);
     }
   };
-
 
   const avlNetwork = {
     137: {
