@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { validator } from "./utils.js";
 import { useCountries } from "../../customHooks/useCountries/";
 import { ethers } from "ethers"; // interacting with wallet
-import abi from "../../data/Crowfuning.json";
+import abi from "../../data/Crowdfunding.json";
 
 export const FormComponent = () => {
   const [form, setForm] = useState({
