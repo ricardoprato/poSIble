@@ -1,28 +1,61 @@
 import React, { useState } from "react";
 import { validator } from "./utils.js";
 import { useCountries } from "../../customHooks/useCountries/";
+import { useState } from "react"; // storing data in the state
+import { ethers } from "ethers"; // interacting with wallet
+import abi from "../../data/Crowfuning.json";
+
 export const FormComponent = () => {
   const [form, setForm] = useState({
     name: "",
     description: "",
+    occupation: "",
     country: "República Dominicana",
     platform: "Platzi",
   });
+
   const [errors, setErrors] = useState({});
   const [countries] = useCountries();
+
   const handleChange = (e) => {
     setErrors(validator({ ...form, [e.target.name]: e.target.value }));
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const prevSubmit = {
       name: form.name || " ",
       description: form.description || " ",
     };
     setErrors(validator(prevSubmit));
+
+    let a = await this.signer.getAddress();
+    let CrowfundingContract = new ethers.Contract(
+      "0x8e008d047744e9a4dd3850c10058ebef07b6c99d",
+      abi,
+      this.signer
+    );
+
+    CrowfundingContract.createNewStudent(form.name, form.description, form.occupation, form.country, form.platform)
+      .then(() => {
+        /* Reset form */
+        form.name = "";
+        form.description = "";
+        form.occupation = "";
+        form.country = "República Dominicana";
+        form.platform = "Platzi";
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    CrowfundingContract.on("studentCreated", (id, name, description, occupation, country, platform) => {
+      // aqui se agrega el estudiante a la lista
+      console.log(id, name, description, occupation, country, platform)
+    })
   };
+
   return (
     <div className="px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8">
       <div className="max-w-lg mx-auto">
@@ -51,7 +84,14 @@ export const FormComponent = () => {
             </div>
             <div>
               <label htmlFor="name">Ocupación</label>
-              <input class="w-full p-3 text-sm border-gray bg-lightGray rounded-lg" placeholder="A qué te dedicas" type="text" id="occupation" />
+              <input
+                class="w-full p-3 text-sm border-gray bg-lightGray rounded-lg"
+                placeholder="A qué te dedicas"
+                type="text"
+                id="occupation"
+                value={form.occupation}
+                onChange={handleChange}
+              />
             </div>
 
             <div>

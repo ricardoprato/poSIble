@@ -155,6 +155,7 @@ export const Students = () => {
   const lastIndex = currentPage * studentPerPage.current;
   const firstIndex = lastIndex - studentPerPage.current;
   const currentStudents = [...students].slice(firstIndex, lastIndex);
+
   return (
     <>
       <section className="p-2 grid gap-2 bg-complementary sm:grid-cols-2 min-h-screen">
