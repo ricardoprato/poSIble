@@ -47,6 +47,10 @@ export const FormComponent = () => {
               />
               {errors?.name && <p className="text-secondary">{errors.name}</p>}
             </div>
+            <div>
+              <label htmlFor="name">Ocupación</label>
+              <input class="w-full p-3 text-sm border-gray bg-lightGray rounded-lg" placeholder="A qué te dedicas" type="text" id="occupation" />
+            </div>
 
             <div>
               <label htmlFor="message">Descripción de ti</label>
@@ -61,6 +65,19 @@ export const FormComponent = () => {
               {errors?.description && (
                 <p className="text-secondary">{errors.description}</p>
               )}
+            </div>
+            <div>
+              <label htmlFor="platform">Plataforma</label>
+              <nav class="flex flex-col space-y-1">
+                <select name="platform" id="platform">
+                  <option value="Platzi">Platzi (0.10 ETH)</option>
+                  <option value="CoderHouse">CoderHouse (0.06)</option>
+                  <option value="EDteam">EDteam (0.15 ETH)</option>
+                  <option value="Blockdemy">Blockdemy (0.05 ETH)</option>
+                  <option value="Crehana">Crehana (0.05 ETH)</option>
+                  <option value="CodigoFacilito">Código Facilito (0.03 ETH)</option>
+                </select>
+              </nav>
             </div>
             <div>
               <label htmlFor="country">País</label>
@@ -100,7 +117,7 @@ export const FormComponent = () => {
               <input type="date" name="" id="" aria-label='' className='w-full p-3 border-gray-200 rounded-lg' />
             </div> */}
 
-            <div className="mt-4">
+            <div className="pt-4">
               <button
                 type="submit"
                 disabled={Object.keys(errors).length}
