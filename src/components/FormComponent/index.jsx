@@ -1,6 +1,5 @@
 import { validator } from "./utils.js";
 import { useCountries } from "../../customHooks/useCountries/";
-import { useState } from "react"; // storing data in the state
 import { ethers } from "ethers"; // interacting with wallet
 import abi from "../../data/Crowfuning.json";
 
@@ -26,6 +25,7 @@ export const FormComponent = () => {
     const prevSubmit = {
       name: form.name || " ",
       description: form.description || " ",
+      occupation: form.occupation || " ",
     };
     setErrors(validator(prevSubmit));
 
@@ -36,7 +36,13 @@ export const FormComponent = () => {
       this.signer
     );
 
-    CrowfundingContract.createNewStudent(form.name, form.description, form.occupation, form.country, form.platform)
+    CrowfundingContract.createNewStudent(
+      form.name,
+      form.description,
+      form.occupation,
+      form.country,
+      form.platform
+    )
       .then(() => {
         /* Reset form */
         form.name = "";
@@ -49,10 +55,13 @@ export const FormComponent = () => {
         console.log(err);
       });
 
-    CrowfundingContract.on("studentCreated", (id, name, description, occupation, country, platform) => {
-      // aqui se agrega el estudiante a la lista
-      console.log(id, name, description, occupation, country, platform)
-    })
+    CrowfundingContract.on(
+      "studentCreated",
+      (id, name, description, occupation, country, platform) => {
+        // aqui se agrega el estudiante a la lista
+        console.log(id, name, description, occupation, country, platform);
+      }
+    );
   };
 
   return (
@@ -88,9 +97,13 @@ export const FormComponent = () => {
                 placeholder="A qué te dedicas"
                 type="text"
                 id="occupation"
+                name="occupation"
                 value={form.occupation}
                 onChange={handleChange}
               />
+              {errors?.occupation && (
+                <p className="text-secondary">{errors.occupation}</p>
+              )}
             </div>
 
             <div>
@@ -108,26 +121,13 @@ export const FormComponent = () => {
               )}
             </div>
             <div>
-              <label htmlFor="platform">Plataforma</label>
-              <nav class="flex flex-col space-y-1">
-                <select name="platform" id="platform">
-                  <option value="Platzi">Platzi (0.10 ETH)</option>
-                  <option value="CoderHouse">CoderHouse (0.06)</option>
-                  <option value="EDteam">EDteam (0.15 ETH)</option>
-                  <option value="Blockdemy">Blockdemy (0.05 ETH)</option>
-                  <option value="Crehana">Crehana (0.05 ETH)</option>
-                  <option value="CodigoFacilito">Código Facilito (0.03 ETH)</option>
-                </select>
-              </nav>
-            </div>
-            <div>
               <label htmlFor="country">País</label>
               <nav className="flex flex-col space-y-1">
                 <select
                   onChange={handleChange}
                   value={form.country}
                   name="country"
-                  id="platform"
+                  id="country"
                 >
                   {countries?.map((country) => (
                     <option key={country} value={country}>
