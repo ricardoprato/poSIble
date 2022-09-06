@@ -150,6 +150,7 @@ export const FaqComponent = () => {
 
         <div className="text-center">
           <h5 className="text-2xl py-10">¿Aún tienes preguntas?</h5>
+
           <p>
             Si no puedes encontrar una respuesta a tu pregunta en esta sección,
             puedes contactarnos.

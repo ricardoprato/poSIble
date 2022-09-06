@@ -76,10 +76,10 @@ export const Footer = () => {
                             </p>
 
                             <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
-                                <a className="hover:opacity-75" href="/faq"> Proyecto </a>
-                                <a className="hover:opacity-75" href="/faq"> Cómo participar </a>
-                                <a className="hover:opacity-75" href="/faq"> Cómo donar </a>
-                                <a className="hover:opacity-75" href="/faq"> Roadmap </a>
+                                <NavLink className="hover:opacity-75" href="/faq"> Proyecto </NavLink>
+                                <NavLink className="hover:opacity-75" href="/faq"> Cómo participar </NavLink>
+                                <NavLink className="hover:opacity-75" href="/faq"> Cómo donar </NavLink>
+                                <NavLink className="hover:opacity-75" href="/faq"> Roadmap </NavLink>
                             </nav>
                         </div>
 
@@ -92,7 +92,7 @@ export const Footer = () => {
                                 <a className="hover:opacity-75" href=""> Joel </a>
                                 <a className="hover:opacity-75" href=""> Juan </a>
                                 <a className="hover:opacity-75" href=""> Miguel </a>
-                                <a className="hover:opacity-75" href=""> Ricardo </a>
+                                <a className="hover:opacity-75" href=""> Ricardo (RedfoxD) </a>
                             </nav>
                         </div>
                     </div>
