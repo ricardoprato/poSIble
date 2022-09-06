@@ -1,6 +1,71 @@
 import { NavLink } from "react-router-dom";
 
+import { useState } from "react"; // storing data in the state
+import { ethers } from "ethers"; // interacting with wallet
+
+
 export const Header = () => {
+
+  const [publicKey, setPublickey] = useState();
+  const [network, setNetwork] = useState();
+  const [chainId, setChainId] = useState();
+  const [msg, setMsg] = useState();
+
+  const connectButton = async () => {
+    const { ethereum } = window;
+    if (ethereum.isMetaMask) {
+      const provider = new ethers.providers.Web3Provider(ethereum);
+      const accounts = await provider.send("eth_requestAccounts", []);
+
+      const { name, chainId } = await provider.getNetwork();
+
+      setNetwork(name);
+      setChainId(chainId);
+      setPublickey(accounts[0]);
+    } else {
+      setMsg("Install MetaMask");
+    }
+  };
+
+  const switchNetwork = async (chainId) => {
+    try {
+      await window.ethereum.request({
+        method: "wallet_addEthereumChain",
+        params: [avlNetwork[`${chainId}`]]
+      });
+      setNetwork(avlNetwork[`${chainId}`].chainName);
+      setChainId(chainId);
+    } catch (error) {
+      setMsg(error);
+    }
+  };
+
+  
+const avlNetwork = {
+  137: {
+    chainId: `0x${Number(137).toString(16)}`,
+    rpcUrls: ["https://rpc-mainnet.matic.network/"],
+    chainName: "Polygon Mainnet",
+    nativeCurrency: {
+      name: "MATIC",
+      symbol: "MATIC",
+      decimals: 18
+    },
+    blockExplorerUrls: ["https://polygonscan.com/"]
+  },
+  43114: {
+    chainId: `0x${Number(43114).toString(16)}`,
+    rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
+    chainName: "Avalanche C-Chain",
+    nativeCurrency: {
+      name: "Avalanche",
+      symbol: "AVAX",
+      decimals: 18
+    },
+    blockExplorerUrls: ["https://snowtrace.io/"]
+  }
+};
+
   return (
     <header className="bg-darkBlue">
       <div className="max-w-screen-xl px-4 py-8 mx-auto sm:py-8 sm:px-6 lg:px-8">
@@ -49,6 +114,31 @@ export const Header = () => {
                 </svg>
               </a>
             </NavLink>
+            <NavLink
+              to="#"
+              className="inline-flex items-center justify-center"
+            >
+              <a onClick={connectButton} className="inline-flex items-center ju px-6 py-3 text-xl font-medium text-white bg-darkBlue border-2 border-white rounded-lg hover:bg-secondary hover:text-black hover:border-black active:bg-primary focus:outline-none focus:ring">
+                <span className="text-sm font-medium"> Metamask </span>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 ml-1.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </NavLink>
+            {msg && <p>{msg}</p>}
+            <p className="text-white">{network}</p>
           </div>
         </div>
       </div>
