@@ -138,7 +138,7 @@ const avlNetwork = {
               </a>
             </NavLink>
             {msg && <p>{msg}</p>}
-            <p className="text-white">{network}</p>
+            <p className="text-white">{publicKey}</p>
           </div>
         </div>
       </div>
