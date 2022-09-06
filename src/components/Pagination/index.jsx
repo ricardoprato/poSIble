@@ -10,15 +10,15 @@ export const Pagination = ({
     pages.push(i);
   }
   return (
-    <div className="flex justify-center gap-3 w-full p-3">
+    <div className="flex justify-center gap-3 w-full p-3 bg-complementary">
       {pages.length &&
         pages.map((page) => (
           <button
             key={page}
-            className={`border border-complementary shadow-md shadow-darkBlue  w-8 h-8 rounded-md ${
+            className={`border border- shadow-md shadow-darkBlue  w-8 h-8 rounded-md ${
               currentPage === page
                 ? "text-white bg-complementary"
-                : "text-complementary"
+                : "text-darkBlue bg-blue"
             }`}
             onClick={() => setCurrentPage(page)}
           >
