@@ -22,10 +22,10 @@ export const Platforms = () => {
 
          <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                     <PlatformCard name='Platzi' image={PlatziImg} description='Crece profesionalmente con más de 1000 cursos en línea con los contenidos más innovadores. Encuentra en Platzi más de 1000 cursos en líneas para mejorar tus habilidades laborales.'/>
-                    <PlatformCard name='CoderHouse' image={CoderHouseImg} description='Toma clases a distancia, con profesores expertos y con una metodología 100% práctica. Los Mejores Cursos de Marketing Digital, Programación y Diseño.'/>
+                    <PlatformCard name='CoderHouse' image={CoderHouseImg} description='Toma clases a distancia, con profesores expertos y con una metodología 100% práctica. Los mejores cursos de marketing digital, programación y diseño.'/>
                     <PlatformCard name='EDTeam' image={EDTeamImg} description='Aprende programación, diseño y emprendimiento en español con profesores que aman enseñar. Invierte en tu conocimiento. Tu futuro te está esperando.'/>
                     <PlatformCard name='Blockdemy' image={BlockdemyImg} description='Blockdemy es un hub educativo dedicado a la formación y posicionamiento de profesionales en el ecosistema de tecnología y Blockchain.'/>
-                    <PlatformCard name='Crehana' image={CrehanaImg} description='Academias de Marketing, Liderazgo, Bussines, Analytics, Ventas, UX, Programación y más. Acceso ilimitado a +1000 cursos por todo 1 año para alcanzar tu protencial profesional.'/>
+                    <PlatformCard name='Crehana' image={CrehanaImg} description='Academias de marketing, liderazgo, bussines, analytics, ventas, UX, programación y más. Acceso ilimitado a +1000 cursos por todo 1 año para alcanzar tu protencial profesional.'/>
                     <PlatformCard name='CodigoFacilito' image={CodigoFacilitoImg} description='Aprende desarrollo web con HTML5, CSS y JavaScript. Backend con Python. React, Go, Laravel. Desarrollo móvil con Android, Flutter y mucho más desde tu casa.'/>
                 </div>
         <div className="mt-12 text-center">
