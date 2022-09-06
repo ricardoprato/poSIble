@@ -11,7 +11,7 @@ export const FaqComponent = () => {
         >
           <summary className="flex items-center justify-between cursor-pointer">
             <h5 className="text-lg font-medium text-gray-900">
-              Quiénes somos?
+              ¿Quiénes somos?
             </h5>
 
             <span className="flex-shrink-0 ml-1.5 p-1.5 text-gray-900 bg-gray rounded-full sm:p-3">
@@ -44,7 +44,7 @@ export const FaqComponent = () => {
         <details className="p-6 ml-16 mr-12 border-l-4 border-green-500 bg-gray-50 group">
           <summary className="flex items-center justify-between cursor-pointer">
             <h5 className="text-lg font-medium text-gray-900">
-              Cómo funciona?
+              ¿Cómo funciona?
             </h5>
 
             <span className="flex-shrink-0 ml-1.5 p-1.5 text-gray-900 bg-gray rounded-full sm:p-3">
@@ -149,7 +149,8 @@ export const FaqComponent = () => {
         </details>
 
         <div className="text-center">
-          <h5 className="text-2xl py-10">Aún tienes preguntas?</h5>
+          <h5 className="text-2xl py-10">¿Aún tienes preguntas?</h5>
+
           <p>
             Si no puedes encontrar una respuesta a tu pregunta en esta sección,
             puedes contactarnos.
