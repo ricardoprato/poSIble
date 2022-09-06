@@ -9,6 +9,7 @@ import { Faq } from "./pages/Faq";
 import { Form } from "./pages/Form";
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
