@@ -5,6 +5,8 @@ export const FormComponent = () => {
   const [form, setForm] = useState({
     name: "",
     description: "",
+    country: "República Dominicana",
+    platform: "Platzi",
   });
   const [errors, setErrors] = useState({});
   const [countries] = useCountries();
@@ -82,7 +84,12 @@ export const FormComponent = () => {
             <div>
               <label htmlFor="country">País</label>
               <nav className="flex flex-col space-y-1">
-                <select name="platform" id="platform">
+                <select
+                  onChange={handleChange}
+                  value={form.country}
+                  name="country"
+                  id="platform"
+                >
                   {countries?.map((country) => (
                     <option key={country} value={country}>
                       {country}
@@ -94,7 +101,12 @@ export const FormComponent = () => {
             <div>
               <label htmlFor="platform">Plataforma</label>
               <nav className="flex flex-col space-y-1">
-                <select name="platform" id="platform">
+                <select
+                  onChange={handleChange}
+                  value={form.platform}
+                  name="platform"
+                  id="platform"
+                >
                   <option value="Platzi">Platzi (0.10 ETH)</option>
                   <option value="CoderHouse">CoderHouse (0.06)</option>
                   <option value="EDteam">EDteam (0.15 ETH)</option>
