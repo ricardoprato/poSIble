@@ -17,6 +17,10 @@ export const FormComponent = () => {
               <label htmlFor="name">Nombre Completo</label>
               <input className="w-full p-3 text-sm border-gray bg-lightGray rounded-lg" placeholder="Tu Nombre" type="text" id="name" />
             </div>
+            <div>
+              <label htmlFor="name">Ocupación</label>
+              <input class="w-full p-3 text-sm border-gray bg-lightGray rounded-lg" placeholder="A qué te dedicas" type="text" id="occupation" />
+            </div>
 
             <div>
               <label htmlFor="message">Descripción de ti</label>
@@ -24,8 +28,21 @@ export const FormComponent = () => {
                 className="w-full p-3 text-sm border-gray bg-lightGray rounded-lg"
                 placeholder="Cuentanos sobre ti y cómo planeas utilizar esta oportunidad para transformar tu vida y tu entorno"
                 rows="8"
-                id="message"
+                id="description"
               ></textarea>
+            </div>
+            <div>
+              <label htmlFor="platform">Plataforma</label>
+              <nav class="flex flex-col space-y-1">
+                <select name="platform" id="platform">
+                  <option value="Platzi">Platzi (0.10 ETH)</option>
+                  <option value="CoderHouse">CoderHouse (0.06)</option>
+                  <option value="EDteam">EDteam (0.15 ETH)</option>
+                  <option value="Blockdemy">Blockdemy (0.05 ETH)</option>
+                  <option value="Crehana">Crehana (0.05 ETH)</option>
+                  <option value="CodigoFacilito">Código Facilito (0.03 ETH)</option>
+                </select>
+              </nav>
             </div>
             <div>
               <label htmlFor="country">País</label>
@@ -70,7 +87,7 @@ export const FormComponent = () => {
               <input type="date" name="" id="" aria-label='' className='w-full p-3 border-gray-200 rounded-lg' />
             </div> */}
 
-            <div className="mt-4">
+            <div className="pt-4">
               <button
                 type="submit"
                 className="inline-flex items-center justify-center w-full px-5 py-3 text-black bg-secondary border-2 border-black hover:bg-primary rounded-lg sm:w-auto"
