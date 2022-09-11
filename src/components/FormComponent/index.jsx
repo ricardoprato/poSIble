@@ -88,9 +88,13 @@ export const FormComponent = () => {
                 placeholder="A qué te dedicas"
                 type="text"
                 id="occupation"
+                name="occupation"
                 value={form.occupation}
                 onChange={handleChange}
               />
+              {errors?.occupation && (
+                <p className="text-secondary">{errors.occupation}</p>
+              )}
             </div>
 
             <div>
@@ -157,17 +161,6 @@ export const FormComponent = () => {
                 </select>
               </nav>
             </div>
-
-            {/* <div>
-              <label htmlFor="name">Cantidad Minima</label>
-              <input type="number" name="Cantidad" id="" aria-label='' placeholder='Cantidad Mininima para donar' className='w-full p-3 border-gray-200 rounded-lg' />
-            </div>
-
-            <div>
-              <label htmlFor="name">Fecha Limite</label>
-              <input type="date" name="" id="" aria-label='' className='w-full p-3 border-gray-200 rounded-lg' />
-            </div> */}
-
             <div className="pt-4">
               <button
                 type="submit"
