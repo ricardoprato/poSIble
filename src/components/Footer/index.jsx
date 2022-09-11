@@ -24,7 +24,7 @@ export const Footer = () => {
                             </NavLink>
                         </p>
 
-                        <p className='mt-4'>El lugar la educación es poSíble.</p>
+                        <p className='mt-4'>El lugar donde la educación es poSíble</p>
 
                         {/* <div className="flex mt-16 space-x-3">
                             <a className="p-2 border rounded-full border-white/25 hover:opacity-75" href="" target="_blank" rel="noreferrer">
@@ -76,10 +76,10 @@ export const Footer = () => {
                             </p>
 
                             <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
-                                <a className="hover:opacity-75" href=""> Proyecto </a>
-                                <a className="hover:opacity-75" href=""> Cómo participar </a>
-                                <a className="hover:opacity-75" href=""> Cómo donar </a>
-                                <a className="hover:opacity-75" href=""> Roadmap </a>
+                                <NavLink className="hover:opacity-75" to="/faq"> Proyecto </NavLink>
+                                <NavLink className="hover:opacity-75" to="/faq"> Cómo participar </NavLink>
+                                <NavLink className="hover:opacity-75" to="/faq"> Cómo donar </NavLink>
+                                <NavLink className="hover:opacity-75" to="/faq"> Roadmap </NavLink>
                             </nav>
                         </div>
 
@@ -92,7 +92,7 @@ export const Footer = () => {
                                 <a className="hover:opacity-75" href=""> Joel </a>
                                 <a className="hover:opacity-75" href=""> Juan </a>
                                 <a className="hover:opacity-75" href=""> Miguel </a>
-                                <a className="hover:opacity-75" href=""> Ricardo </a>
+                                <a className="hover:opacity-75" href=""> Ricardo (RedfoxD) </a>
                             </nav>
                         </div>
                     </div>
@@ -101,7 +101,7 @@ export const Footer = () => {
                 <div className="pt-12 mt-12 border-t border-gray-800">
                     <div className="text-sm text-gray-300 sm:items-center sm:justify-between sm:flex">
                         <div className="flex space-x-3">
-                            <a className="hover:opacity-75" href="">Términos y condiciones</a>
+                            <a className="hover:opacity-75" href="/faq">Términos y condiciones</a>
                         </div>
 
                         <p className="mt-4 sm:mt-0">
