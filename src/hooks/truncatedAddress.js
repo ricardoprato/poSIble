@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 
-const truncatedAddress = (account) => {
+export const useTruncatedAddress = (account) => {
   const truncated = useMemo(
-    () => `${account?.substr(0, 6)}...${account?.substr(-4)}`,
+    () => `${account?.substr(0, 5)}...${account?.substr(-4)}`,
     [account]
   );
 
@@ -12,5 +12,3 @@ const truncatedAddress = (account) => {
 export const usePercent = (part, all) => {
   return ((part / all) * 100).toFixed(2);
 };
-
-export default truncatedAddress;
