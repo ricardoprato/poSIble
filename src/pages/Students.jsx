@@ -160,9 +160,9 @@ export const Students = () => {
     <>
       <section className="p-2 grid gap-2 bg-complementary sm:grid-cols-2 min-h-screen">
         {currentStudents.length ? (
-          currentStudents.map((prop) => (
+          currentStudents.map((prop, i) => (
             <>
-              <StudentList key={prop.fullName} {...prop} />
+              <StudentList key={`${prop.fullName}-${i}`} {...prop} />
             </>
           ))
         ) : (
