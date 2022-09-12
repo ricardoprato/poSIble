@@ -3,8 +3,11 @@ import { useCountries } from "../../customHooks/useCountries/";
 import { useState } from "react"; // storing data in the state
 import { ethers } from "ethers"; // interacting with wallet
 import abi from "../../data/Crowdfunding.json";
+import studentsStatus from "../../hooks/studentsStatus.js";
 
 export const FormComponent = () => {
+
+  const numStudents = studentsStatus();
   const [form, setForm] = useState({
     name: "",
     description: "",
@@ -29,30 +32,30 @@ export const FormComponent = () => {
     };
     setErrors(validator(prevSubmit));
 
-    let a = await this.signer.getAddress();
-    let CrowfundingContract = new ethers.Contract(
-      "0x8e008d047744e9a4dd3850c10058ebef07b6c99d",
-      abi,
-      this.signer
-    );
+    // let a = await this.signer.getAddress();
+    // let CrowfundingContract = new ethers.Contract(
+    //   "0x8e008d047744e9a4dd3850c10058ebef07b6c99d",
+    //   abi,
+    //   this.signer
+    // );
 
-    CrowfundingContract.createNewStudent(form.name, form.description, form.occupation, form.country, form.platform)
-      .then(() => {
-        /* Reset form */
-        form.name = "";
-        form.description = "";
-        form.occupation = "";
-        form.country = "República Dominicana";
-        form.platform = "Platzi";
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // CrowfundingContract.createNewStudent(form.name, form.description, form.occupation, form.country, form.platform)
+    //   .then(() => {
+    //     /* Reset form */
+    //     form.name = "";
+    //     form.description = "";
+    //     form.occupation = "";
+    //     form.country = "República Dominicana";
+    //     form.platform = "Platzi";
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
 
-    CrowfundingContract.on("studentCreated", (id, name, description, occupation, country, platform) => {
-      // aqui se agrega el estudiante a la lista
-      console.log(id, name, description, occupation, country, platform)
-    })
+    // CrowfundingContract.on("studentCreated", (id, name, description, occupation, country, platform) => {
+    //   // aqui se agrega el estudiante a la lista
+    //   console.log(id, name, description, occupation, country, platform)
+    // })
   };
 
   return (
@@ -61,6 +64,7 @@ export const FormComponent = () => {
         <h1 className="text-2xl font-bold text-center text-secondary sm:text-3xl">
           ¡Empieza tu sueño aqui!
         </h1>
+        <p>{numStudents.numStudents}</p>
 
         <p className="max-w-md mx-auto mt-4 text-center text-white">
           Completa los campos correspondientes para conocer más acerca de ti
