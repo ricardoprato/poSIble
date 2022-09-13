@@ -12,7 +12,7 @@ export const StudentList = ({
       <article className="p-6 bg-blue sm:p-8 rounded-xl border-2 border-darkBlue">
         <div className="flex items-start">
           <div className=" overflow-hidden border-2 border-darkBlue grid h-20 w-20 shrink-0 place-content-center rounded-full">
-            <img src={avatar} />
+            <img src={avatar} alt="" />
           </div>
 
           <div className="ml-8">
