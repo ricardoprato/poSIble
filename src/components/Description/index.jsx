@@ -29,12 +29,14 @@ export const Description = () => {
               plataformas de educación online asociadas.
             </p>
 
-            <button
-              onClick={connect}
-              className="inline-block px-12 py-3 text-sm font-medium text-black rounded shadow bg-primary border-2 border-black sm:w-auto hover:bg-red focus:outline-none focus:ring"
-            >
-              Registrarte
-            </button>
+            <NavLink to="/profile">
+              <button
+                onClick={connect}
+                className="inline-block px-12 py-3 text-sm font-medium text-black rounded shadow bg-primary border-2 border-black sm:w-auto hover:bg-red focus:outline-none focus:ring"
+              >
+                Registrarte
+              </button>
+            </NavLink>
           </div>
         </div>
       </div>
