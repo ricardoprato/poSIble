@@ -22,7 +22,9 @@ module.exports = {
       lightGray: '#edebe8',
       black: '#000',
       lightDark: '#131516',
-      gray: '#26231c'
+      gray: '#26231c',
+      green: '#007e5b',
+      grayBar: '#202426'
     }
   },
   plugins: [],
