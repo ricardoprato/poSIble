@@ -41,7 +41,6 @@ export const FormComponent = () => {
     };
     setErrors(validator(prevSubmit));
     if (Object.keys(errors).length === 0) {
-      console.log({ prevSubmit });
       postStudents(prevSubmit);
     }
     // let a = await this.signer.getAddress();
