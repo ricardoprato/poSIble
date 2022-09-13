@@ -87,7 +87,7 @@ export const Header = () => {
                 }
               >
                 <span className="text-sm font-medium">
-                  {publicKey ? shortAddress : "Metamask"}
+                  {publicKey ? shortAddress : "Registrarte"}
                 </span>
                 {publicKey ? (
                   ""

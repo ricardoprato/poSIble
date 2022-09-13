@@ -5,7 +5,6 @@ export const useConnect = () => {
   const [publicKey, setPublickey] = useState();
   const [network, setNetwork] = useState();
   const [chainId, setChainId] = useState();
-  const [msg, setMsg] = useState();
   const { ethereum } = window;
   const connect = async () => {
     if (ethereum?.isMetaMask) {
@@ -21,7 +20,7 @@ export const useConnect = () => {
     } else {
       Swal.fire({
         title: "Error!",
-        text: "Install Metamask",
+        text: "Necesitas tener Metamask instalado",
         icon: "error",
         confirmButtonText: "OK :(",
       });

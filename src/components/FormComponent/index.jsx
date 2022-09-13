@@ -15,7 +15,6 @@ export const FormComponent = () => {
     occupation: "",
     country: "República Dominicana",
     platform: "Platzi",
-    avatar: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -28,17 +27,21 @@ export const FormComponent = () => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const handleSubmit = async (e) => {
+    const number = Math.round(Math.random() * 151);
     e.preventDefault();
     const prevSubmit = {
       name: form.name || " ",
       description: form.description || " ",
       occupation: form.occupation || " ",
-      avatar:
-        form.avatar ||
-        "https://imgs.search.brave.com/rEwv3UEQ2OLLqm6TGy6nyy_vhas7EtHMfR2Mv1S2rAk/rs:fit:860:900:1/g:ce/aHR0cHM6Ly93d3cu/cG5naXRlbS5jb20v/cGltZ3MvbS83OC03/ODYyOTNfMTI0MC14/LTEyNDAtMC1hdmF0/YXItcHJvZmlsZS1p/Y29uLXBuZy5wbmc",
+      country: form.country,
+      platform: form.platform,
+      image:
+        form.image ||
+        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${number}.png`,
     };
     setErrors(validator(prevSubmit));
     if (Object.keys(errors).length === 0) {
+      console.log({ prevSubmit });
       postStudents(prevSubmit);
     }
     // let a = await this.signer.getAddress();
@@ -133,21 +136,23 @@ export const FormComponent = () => {
                   <p className="text-secondary">{errors.occupation}</p>
                 )}
               </div>
-              <div>
-                <label htmlFor="name">Avatar</label>
-                <input
-                  className="w-full p-3 text-sm border-gray bg-lightGray rounded-lg"
-                  placeholder="Imagen de perfil"
-                  type="text"
-                  id="avatar"
-                  name="avatar"
-                  value={form.avatar}
-                  onChange={handleChange}
-                />
-                {errors?.avatar && (
-                  <p className="text-secondary">{errors.avatar}</p>
-                )}
-              </div>
+              {
+                // <div>
+                //   <label htmlFor="name">Avatar</label>
+                //   <input
+                //     className="w-full p-3 text-sm border-gray bg-lightGray rounded-lg"
+                //     placeholder="Imagen de perfil"
+                //     type="text"
+                //     id="avatar"
+                //     name="avatar"
+                //     value={form.image}
+                //     onChange={handleChange}
+                //   />
+                //   {errors?.image && (
+                //     <p className="text-secondary">{errors.image}</p>
+                //   )}
+                // </div>
+              }
               <div>
                 <label htmlFor="message">Descripción de ti</label>
                 <textarea
