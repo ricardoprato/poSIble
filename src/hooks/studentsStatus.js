@@ -13,7 +13,6 @@ const studentsStatus = () => {
   const [status, setStatus] = useState(false);
   const [numStudents, setNumStudents] = useState(4);
 
-
   const getData = async () => {
     if (active) {
       let web3;
@@ -21,12 +20,12 @@ const studentsStatus = () => {
       web3 = new EthersMethod(chainId, library?.ethers);
 
       const numStudents = await Promise(web3.getNumStudents());
-      console.log(numStudents)
+      console.log(numStudents);
       setNumStudents(numStudents);
 
       // const [
-      //   studentId, 
-      //   descriptionValue, 
+      //   studentId,
+      //   descriptionValue,
       //   ocupationValue,
       //   countryValue,
       //   finished
@@ -52,8 +51,8 @@ const studentsStatus = () => {
   }, [library, chainId, active]);
 
   return {
-    numStudents
-  }
+    numStudents,
+  };
 };
 
 export default studentsStatus;

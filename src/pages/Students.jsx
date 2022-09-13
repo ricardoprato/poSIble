@@ -1,172 +1,39 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
+import { Context } from "../context/students/Context.jsx";
 import { StudentList } from "../components/StudentList";
 import { Pagination } from "../components/Pagination";
-
-const students = [
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-  {
-    fullName: "Miguel Angel",
-    title: "Full Stack Developer",
-    location: "Peru",
-    description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    avatar: "https://avatars.githubusercontent.com/Redf0xD",
-  },
-];
+import { getStudents } from "../services/Pinata/get.js";
 
 export const Students = () => {
+  const { students, getStudentsData } = useContext(Context);
+  const [loading, setLoading] = useState(false);
   const studentPerPage = useRef(6);
   const [currentPage, setCurrentPage] = useState(1);
   const lastIndex = currentPage * studentPerPage.current;
   const firstIndex = lastIndex - studentPerPage.current;
-  const currentStudents = [...students].slice(firstIndex, lastIndex);
+  const currentStudents = [...students]?.slice(firstIndex, lastIndex);
 
+  useEffect(() => {
+    if (!students.length) {
+      setLoading(true);
+      getStudentsData().then(() => setLoading(false));
+    }
+  }, []);
   return (
     <>
       <section className="p-2 grid gap-2 bg-complementary sm:grid-cols-2 min-h-screen">
-        {currentStudents.length ? (
-          currentStudents.map((prop, i) => (
-            <>
-              <StudentList key={`${prop.fullName}-${i}`} {...prop} />
-            </>
-          ))
+        {!loading ? (
+          currentStudents.length ? (
+            currentStudents.map((prop) => (
+              <>
+                <StudentList key={prop.id} {...prop} />
+              </>
+            ))
+          ) : (
+            <p>NO hay estudiantes para mostrar</p>
+          )
         ) : (
-          <h1>NO hay estudiantes para mostrar</h1>
+          <p>Cargando...</p>
         )}
       </section>
       <Pagination
