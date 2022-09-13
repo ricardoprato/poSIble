@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ethers } from "ethers"; // interacting with wallet
+import Swal from "sweetalert2";
 export const useConnect = () => {
   const [publicKey, setPublickey] = useState();
   const [network, setNetwork] = useState();
@@ -7,7 +8,7 @@ export const useConnect = () => {
   const [msg, setMsg] = useState();
   const { ethereum } = window;
   const connect = async () => {
-    if (ethereum.isMetaMask) {
+    if (ethereum?.isMetaMask) {
       localStorage.setItem("previouslyConnected", "true");
       const provider = new ethers.providers.Web3Provider(ethereum);
       const accounts = await provider.send("eth_requestAccounts", []);
@@ -18,7 +19,12 @@ export const useConnect = () => {
       setChainId(chainId);
       setPublickey(accounts[0]);
     } else {
-      setMsg("Install MetaMask");
+      Swal.fire({
+        title: "Error!",
+        text: "Install Metamask",
+        icon: "error",
+        confirmButtonText: "OK :(",
+      });
     }
   };
   return { publicKey, connect };

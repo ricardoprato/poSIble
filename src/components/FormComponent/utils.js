@@ -30,5 +30,14 @@ export const validator = (form) => {
       errors.occupation = "Ocupación debe tener al menos 5 caracteres";
     }
   }
+  if (form.avatar) {
+    if (
+      !/(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-])*((\.jpg)|(\.png)|(\.jpeg)|(\.svg))\/?(\.webp)?/.test(
+        form.avatar
+      )
+    ) {
+      errors.avatar = "Avatar debe contener una direccion URL valida";
+    }
+  }
   return errors;
 };

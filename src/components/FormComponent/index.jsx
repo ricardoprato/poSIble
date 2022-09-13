@@ -2,6 +2,8 @@ import { validator } from "./utils.js";
 import { useCountries } from "../../customHooks/useCountries/";
 import { useState } from "react"; // storing data in the state
 import { ethers } from "ethers"; // interacting with wallet
+import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { postStudents } from "../../services/Pinata/post.js";
 import abi from "../../data/Crowdfunding.json";
 import studentsStatus from "../../hooks/studentsStatus.js";
 
@@ -13,26 +15,32 @@ export const FormComponent = () => {
     occupation: "",
     country: "República Dominicana",
     platform: "Platzi",
+    avatar: "",
   });
 
   const [errors, setErrors] = useState({});
-  const [isStudent, setIsStudent] = useState(false);
+  const [isStudent, setIsStudent] = useLocalStorage("student", false);
+
   const [countries] = useCountries();
 
   const handleChange = (e) => {
     setErrors(validator({ ...form, [e.target.name]: e.target.value }));
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const prevSubmit = {
       name: form.name || " ",
       description: form.description || " ",
       occupation: form.occupation || " ",
+      avatar:
+        form.avatar ||
+        "https://imgs.search.brave.com/rEwv3UEQ2OLLqm6TGy6nyy_vhas7EtHMfR2Mv1S2rAk/rs:fit:860:900:1/g:ce/aHR0cHM6Ly93d3cu/cG5naXRlbS5jb20v/cGltZ3MvbS83OC03/ODYyOTNfMTI0MC14/LTEyNDAtMC1hdmF0/YXItcHJvZmlsZS1p/Y29uLXBuZy5wbmc",
     };
     setErrors(validator(prevSubmit));
-
+    if (Object.keys(errors).length === 0) {
+      postStudents(prevSubmit);
+    }
     // let a = await this.signer.getAddress();
     // let CrowfundingContract = new ethers.Contract(
     //   "0x8e008d047744e9a4dd3850c10058ebef07b6c99d",
@@ -58,8 +66,7 @@ export const FormComponent = () => {
     //   console.log(id, name, description, occupation, country, platform)
     // })
   };
-  const handleClickStudent = (e) => {
-    e.preventDefault();
+  const handleClickStudent = () => {
     setIsStudent(!isStudent);
   };
   return (
@@ -71,7 +78,8 @@ export const FormComponent = () => {
         <p className="max-w-md mx-auto mt-4 text-center text-white">
           Completa los campos correspondientes para conocer más acerca de ti
         </p>
-        <div className="p-8 flex justify-center gap-2 align-bottom">
+        <div className="p-8 flex justify-center gap-2 flex-col items-center ">
+          <p className="text-white font-semibold">¿Eres estudiante?</p>
           <button
             htmlFor="AcceptConditions"
             className="relative w-16 h-9 cursor-pointer "
@@ -125,7 +133,21 @@ export const FormComponent = () => {
                   <p className="text-secondary">{errors.occupation}</p>
                 )}
               </div>
-
+              <div>
+                <label htmlFor="name">Avatar</label>
+                <input
+                  className="w-full p-3 text-sm border-gray bg-lightGray rounded-lg"
+                  placeholder="Imagen de perfil"
+                  type="text"
+                  id="avatar"
+                  name="avatar"
+                  value={form.avatar}
+                  onChange={handleChange}
+                />
+                {errors?.avatar && (
+                  <p className="text-secondary">{errors.avatar}</p>
+                )}
+              </div>
               <div>
                 <label htmlFor="message">Descripción de ti</label>
                 <textarea
