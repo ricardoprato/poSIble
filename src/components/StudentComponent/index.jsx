@@ -11,7 +11,6 @@ const StudentComponent = ({ estado = "Patrocinado" }) => {
             src={background}
             alt="Couple on a bed with a dog"
           />
-          {/* <span id="blackOverlay" className="w-full h-full absolute opacity-50 bg-black"></span> */}
         </div>
 
         <div className="relative px-4 py-32 mx-auto max-w-screen-xl lg:h-auto lg:items-center lg:flex"></div>
@@ -85,7 +84,7 @@ const StudentComponent = ({ estado = "Patrocinado" }) => {
                   Me motiva mi familia
                 </div>
               </div>
-              <div className='mt-6'>
+              <div className='mt-6 sm:mx-12'>
                 <div>
                   <p className="text-md lg:text-2xl font-medium text-gray-500">Progreso de recaudación</p>
 
@@ -106,16 +105,6 @@ const StudentComponent = ({ estado = "Patrocinado" }) => {
                         $4.8m
                       </dd>
                     </div>
-
-                    {/* <div
-                      class="flex flex-col px-4 py-8 text-center border border-gray-100 rounded-lg"
-                    >
-                      <dt class="order-last text-sm font-medium text-gray-500">
-                        Offical Addons
-                      </dt>
-
-                      <dd class="text-2xl font-extrabold text-blue-600 md:text-5xl">24</dd>
-                    </div> */}
 
                     <div
                       class="flex flex-col px-4 py-8 text-center border border-gray-100 rounded-lg"
