@@ -26,3 +26,12 @@ export const getStudents = async () => {
     return [];
   }
 };
+
+export const getSingleStudent = async (id) => {
+  try {
+    const res = await axios(`${gateway}/ipfs/${id}`);
+    return { ...res?.data, id: id };
+  } catch {
+    return {};
+  }
+};

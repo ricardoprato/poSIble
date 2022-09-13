@@ -15,7 +15,6 @@ export const FormComponent = () => {
     occupation: "",
     country: "República Dominicana",
     platform: "Platzi",
-    image: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -137,21 +136,23 @@ export const FormComponent = () => {
                   <p className="text-secondary">{errors.occupation}</p>
                 )}
               </div>
-              <div>
-                <label htmlFor="name">Avatar</label>
-                <input
-                  className="w-full p-3 text-sm border-gray bg-lightGray rounded-lg"
-                  placeholder="Imagen de perfil"
-                  type="text"
-                  id="avatar"
-                  name="avatar"
-                  value={form.image}
-                  onChange={handleChange}
-                />
-                {errors?.image && (
-                  <p className="text-secondary">{errors.image}</p>
-                )}
-              </div>
+              {
+                // <div>
+                //   <label htmlFor="name">Avatar</label>
+                //   <input
+                //     className="w-full p-3 text-sm border-gray bg-lightGray rounded-lg"
+                //     placeholder="Imagen de perfil"
+                //     type="text"
+                //     id="avatar"
+                //     name="avatar"
+                //     value={form.image}
+                //     onChange={handleChange}
+                //   />
+                //   {errors?.image && (
+                //     <p className="text-secondary">{errors.image}</p>
+                //   )}
+                // </div>
+              }
               <div>
                 <label htmlFor="message">Descripción de ti</label>
                 <textarea

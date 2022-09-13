@@ -6,15 +6,17 @@ export const StudentList = ({
   description,
   occupation,
   avatar,
+  id,
 } = {}) => {
   return (
-    <NavLink to="/estudiantes/1">
+    <NavLink to={`/estudiantes/${id}`}>
       <article className="p-6 bg-blue sm:p-8 rounded-xl border-2 border-darkBlue">
         <div className="flex items-start">
-          <div className=" overflow-hidden border-2 border-darkBlue grid h-20 w-20 shrink-0 place-content-center rounded-full">
-            <img src={avatar} />
-          </div>
-
+          {
+            // <div className=" overflow-hidden border-2 border-darkBlue grid h-20 w-20 shrink-0 place-content-center rounded-full">
+            //   <img src={avatar} />
+            // </div>
+          }
           <div className="ml-8">
             <strong className="rounded border-2 px-3 py-1.5 text-[16px] font-medium text-white">
               {name}
